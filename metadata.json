@@ -1,0 +1,6 @@
+{
+  "name": "Wireless ADB & Hotspot",
+  "description": "An automated developer utility tool that starts a Local Wi-Fi Hotspot and quickly links to Wireless Debugging settings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
