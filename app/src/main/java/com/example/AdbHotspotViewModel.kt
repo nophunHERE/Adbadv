@@ -107,6 +107,7 @@ class AdbHotspotViewModel : ViewModel() {
         _state.update { it.copy(deviceIpAddress = ip) }
     }
 
+    @Suppress("DEPRECATION")
     fun startLocalOnlyHotspot(context: Context) {
         if (_state.value.hotspotStatus == HotspotStatus.STARTING || _state.value.hotspotStatus == HotspotStatus.ACTIVE) {
             log("Hotspot is already starting or active.")

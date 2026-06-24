@@ -26,6 +26,19 @@ jobs:
     - name: Set up Gradle
       uses: gradle/actions/setup-gradle@v4
 
+    - name: Create debug keystore
+      run: |
+        keytool -genkeypair -v \
+          -storetype JKS \
+          -keystore "$GITHUB_WORKSPACE/debug.keystore" \
+          -alias androiddebugkey \
+          -storepass android \
+          -keypass android \
+          -keyalg RSA \
+          -keysize 2048 \
+          -validity 10000 \
+          -dname "CN=Android Debug,O=Android,C=US"
+
     - name: Build Debug APK
       run: gradle assembleDebug
 
